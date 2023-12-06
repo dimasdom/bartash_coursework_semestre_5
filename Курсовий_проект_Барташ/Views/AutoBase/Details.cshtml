@@ -1,0 +1,78 @@
+﻿@using Core.Entities
+@model AutoBase
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AutoBase Details</title>
+</head>
+<body>
+
+    <h2>AutoBase Details</h2>
+
+    <dl>
+        <dt>Name:</dt>
+        <dd>@Model.Name</dd>
+
+        <dt>Description:</dt>
+        <dd>@Model.Description</dd>
+
+        <dt>Created Date:</dt>
+        <dd>@Model.CreatedDate</dd>
+
+        <dt>Updated Date:</dt>
+        <dd>@Model.UpdatedDate</dd>
+
+        <!-- Add other AutoBase properties as needed -->
+
+          <div>
+        <a asp-action="Create" asp-controller="Fuel" asp-route-autoBaseId="@Model.Id">Create Fuel Consumption</a>
+    </div>
+    <div>
+        <a asp-action="Create" asp-controller="Suppliers" asp-route-autoBaseId="@Model.Id">Create Supplier</a>
+    </div>
+    <div>
+        <a asp-action="Create" asp-controller="Employee" asp-route-autoBaseId="@Model.Id">Create Employee</a>
+    </div>
+
+        <dt>Fuel Consumption:</dt>
+        <ul>
+            @foreach (var fuelConsumption in Model.FuelConsumption)
+            {
+                <li>
+                    <a href="@Url.Action("Details", "Fuel", new { id = fuelConsumption.Id })">
+                        @fuelConsumption.Type - Volume: @fuelConsumption.Volume, Price: @fuelConsumption.Price
+                    </a>
+                </li>
+            }
+        </ul>
+
+        <dt>Suppliers:</dt>
+        <ul>
+            @foreach (var supplier in Model.Suppliers)
+            {
+                <li>
+                    <a href="@Url.Action("Details", "Suppliers", new { id = supplier.Id })">
+                        @supplier.Name
+                    </a>
+                </li>
+            }
+        </ul>
+
+        <dt>Employees:</dt>
+        <ul>
+            @foreach (var employee in Model.Employees)
+            {
+                <li>
+                    <a href="@Url.Action("Details", "Employee", new { id = employee.Id })">
+                        @employee.Name
+                    </a>
+                </li>
+            }
+        </ul>
+    </dl>
+
+</body>
+</html>

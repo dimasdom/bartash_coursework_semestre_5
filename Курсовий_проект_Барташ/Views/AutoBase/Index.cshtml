@@ -1,0 +1,24 @@
+﻿@using Core.Entities
+@model List<AutoBase>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AutoBase List</title>
+</head>
+<body>
+
+    <h2>AutoBase List</h2>
+
+    <ul>
+        <a href="@Url.Action("Create")">Create a new one</a>
+        @foreach (var autoBase in Model)
+        {
+            <li><a href="@Url.Action("Details", new { id = autoBase.Id })">@autoBase.Name</a></li>
+        }
+    </ul>
+
+</body>
+</html>

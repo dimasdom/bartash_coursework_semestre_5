@@ -1,0 +1,38 @@
+﻿@using Core.Entities
+@model Supplier
+
+@{
+    ViewData["Title"] = "Supplier Details";
+}
+
+<h2>Supplier Details</h2>
+
+<dl>
+    <dt>Id:</dt>
+    <dd>@Model.Id</dd>
+
+    <dt>Name:</dt>
+    <dd>@Model.Name</dd>
+
+    <dt>Description:</dt>
+    <dd>@Model.Description</dd>
+
+    <dt>Creation Date:</dt>
+    <dd>@Model.CreationDate</dd>
+
+    <dt>Tax Number:</dt>
+    <dd>@Model.TaxNum</dd>
+
+    <dt>IBAN:</dt>
+    <dd>@Model.IBAN</dd>
+
+    <dt>AutoBase Id:</dt>
+    <dd>@Model.AutoBaseId</dd>
+
+    <!-- Additional fields as needed -->
+    <!-- Add navigation links if necessary -->
+    <p>
+        <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
+        <a asp-action="Index">Back to List</a>
+    </p>
+</dl>
