@@ -52,7 +52,7 @@ namespace Infrastracture.DataBase.Repositories
 
         public void Update(AutoBase value)
         {
-            throw new NotImplementedException();
+            dbContext.AutoBases.Update(value); dbContext.SaveChanges();
         }
     }
 }

@@ -47,7 +47,7 @@ namespace Infrastracture.DataBase.Repositories
 
         public void Update(Supplier value)
         {
-            throw new NotImplementedException();
+            dbContext.Suppliers.Update(value); dbContext.SaveChanges();
         }
     }
 }

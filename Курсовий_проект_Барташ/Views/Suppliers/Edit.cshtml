@@ -1,0 +1,41 @@
+﻿@using Core.Entities
+@model Supplier
+
+@{
+    ViewData["Title"] = "Edit Supplier";
+}
+
+<h2>Edit Supplier</h2>
+
+<form asp-action="Edit" method="post">
+    <div style="opacity:0">
+        <input asp-for="AutoBaseId" required />
+    </div>
+    <div>
+        <label asp-for="Name">Name:</label>
+        <input asp-for="Name" class="form-control" required>
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+
+    <div>
+        <label asp-for="Description">Description:</label>
+        <textarea asp-for="Description" class="form-control" required></textarea>
+        <span asp-validation-for="Description" class="text-danger"></span>
+    </div>
+
+    <div>
+        <label asp-for="TaxNum">Tax Number:</label>
+        <input asp-for="TaxNum" class="form-control" required>
+        <span asp-validation-for="TaxNum" class="text-danger"></span>
+    </div>
+
+    <div>
+        <label asp-for="IBAN">IBAN:</label>
+        <input asp-for="IBAN" class="form-control" required>
+        <span asp-validation-for="IBAN" class="text-danger"></span>
+    </div>
+
+    <div>
+        <button type="submit">Edit</button>
+    </div>
+</form>

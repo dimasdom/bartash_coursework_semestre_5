@@ -1,6 +1,7 @@
 ﻿using Core.DTO;
 using Core.Entities;
 using Core.Interfaces;
+using Core.Services;
 using Microsoft.AspNetCore.Mvc;
 namespace Курсовий_проект_Барташ.Controllers
 {
@@ -23,16 +24,19 @@ namespace Курсовий_проект_Барташ.Controllers
         }
         public ActionResult Edit(Guid Id)
         {
-            return View();
+            return View(_employeeService.GetEmployee(Id));
         }
         [HttpPost]
-        public ActionResult Edit(EmployeeDTO model)
+        public ActionResult Edit(Employee model)
         {
-            return View(model);
+            _employeeService.UpdateEmployee(model);
+            return View("Details",model);
         }
         public ActionResult Delete(Guid Id)
         {
-            return View();
+            var model = _employeeService.GetEmployee(Id);
+            _employeeService.DeleteEmployee(Id);
+            return RedirectToAction("Details", "AutoBase", new { Id = model.AutoBaseId });
         }
         public ActionResult Create(Guid autoBaseId)
         {
@@ -42,7 +46,7 @@ namespace Курсовий_проект_Барташ.Controllers
         public ActionResult Create(Employee model)
         {
             _employeeService.CreateEmployee(model);
-            return View();
+            return RedirectToAction("Details", "AutoBase", new { Id = model.AutoBaseId });
         }
     }
 }

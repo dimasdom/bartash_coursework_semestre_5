@@ -16,7 +16,7 @@
         <a href="@Url.Action("Create")">Create a new one</a>
         @foreach (var autoBase in Model)
         {
-            <li><a href="@Url.Action("Details", new { id = autoBase.Id })">@autoBase.Name</a></li>
+            <li><a href="@Url.Action("Details", new { id = autoBase.Id })">@autoBase.Name</a> <a href="@Url.Action("Edit", new { id = autoBase.Id })">Edit</a> <a href="@Url.Action("Delete", new { id = autoBase.Id })">Delete</a></li>
         }
     </ul>
 

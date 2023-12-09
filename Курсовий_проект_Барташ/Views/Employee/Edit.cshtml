@@ -1,0 +1,40 @@
+﻿@using Core.Entities
+@using Core.Entities.Enum
+@model Employee
+
+@{
+    ViewData["Title"] = "Edit Employee";
+}
+<div>
+
+<h2>Edit Employee</h2>
+
+    <form asp-action="Edit" method="post">
+        <div style="opacity:0">
+            <input asp-for="AutoBaseId" required />
+        </div>
+    <div>
+        <label asp-for="Name">Name:</label>
+        <input asp-for="Name" class="form-control" required>
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+
+    <div>
+        <label asp-for="Surname">Surname:</label>
+        <input asp-for="Surname" class="form-control" required>
+        <span asp-validation-for="Surname" class="text-danger"></span>
+    </div>
+
+    <div>
+        <label asp-for="Position">Position:</label>
+        <select asp-for="Position" asp-items="Html.GetEnumSelectList<PositionType>()" class="form-control" required></select>
+        <span asp-validation-for="Position" class="text-danger"></span>
+    </div>
+
+    <!-- Add other fields as needed -->
+
+    <div>
+            <button type="submit">Edit</button>
+    </div>
+</form>
+</div>

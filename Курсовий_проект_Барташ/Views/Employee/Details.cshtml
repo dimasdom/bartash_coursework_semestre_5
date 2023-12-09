@@ -13,22 +13,23 @@
 
     <form asp-action="/submit_employee" method="post">
         <label asp-for="Name">Name:</label>
-        <input asp-for="Name" class="form-control" required><br>
+        <input asp-for="Name" class="form-control" required readonly><br>
 
         <label asp-for="Surname">Surname:</label>
-        <input asp-for="Surname" class="form-control" required><br>
+        <input asp-for="Surname" class="form-control" required readonly><br>
 
         <label asp-for="CreatedDate">Created Date:</label>
-        <input asp-for="CreatedDate" type="datetime-local" class="form-control" required><br>
+        <input asp-for="CreatedDate" type="datetime-local" class="form-control" required readonly><br>
 
         <label asp-for="AutoBaseId">AutoBase ID:</label>
-        <input asp-for="AutoBaseId" class="form-control" required><br>
+        <input asp-for="AutoBaseId" class="form-control" required readonly><br>
 
         <label asp-for="Position">Position:</label>
         <select asp-for="Position" asp-items="Html.GetEnumSelectList<PositionType>()" class="form-control" required></select><br>
-
-        <input type="submit" value="Submit">
     </form>
-
+    <p>
+        <a asp-action="Edit" asp-controller="Employee" asp-route-id="@Model.Id">Edit</a> |
+        <a asp-action="Details" asp-controller="AutoBase" asp-route-Id="@Model.AutoBaseId">Back to List</a>
+    </p>
 </body>
 </html>

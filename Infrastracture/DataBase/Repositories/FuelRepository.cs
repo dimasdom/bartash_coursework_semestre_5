@@ -47,7 +47,7 @@ namespace Infrastracture.DataBase.Repositories
 
         public void Update(FuelConsumption value)
         {
-            throw new NotImplementedException();
+            dbContext.FuelConsumption.Update(value); dbContext.SaveChanges();
         }
     }
 }

@@ -13,31 +13,24 @@
 
     <form asp-action="/submit_fuel_consumption" method="post">
         <label asp-for="AutoBaseId">AutoBase ID:</label>
-        <input asp-for="AutoBaseId" class="form-control" required><br>
+        <input asp-for="AutoBaseId" class="form-control" required readonly><br>
 
         <label asp-for="Type">Fuel Type:</label>
-        <select asp-for="Type" asp-items="Html.GetEnumSelectList<FuelType>()" class="form-control" required></select><br>
+        <select asp-for="Type" asp-items="Html.GetEnumSelectList<FuelType>()" class="form-control" required readonly></select><br>
 
         <label asp-for="Volume">Volume:</label>
-        <input asp-for="Volume" type="number" step="0.1" class="form-control" required><br>
+        <input asp-for="Volume" type="number" step="0.1" class="form-control" required readonly><br>
 
         <label asp-for="Price">Price:</label>
-        <input asp-for="Price" type="number" step="0.01" class="form-control" required><br>
+        <input asp-for="Price" type="number" step="0.01" class="form-control" required readonly><br>
 
         <label asp-for="OperationType">Operation Type:</label>
-        <select asp-for="OperationType" asp-items="Html.GetEnumSelectList<OperationType>()" class="form-control" required></select><br>
+        <select asp-for="OperationType" asp-items="Html.GetEnumSelectList<OperationType>()" class="form-control" required readonly></select><br>
 
-        @* <label asp-for="SupplierId">Supplier ID:</label>
-        <input asp-for="SupplierId" class="form-control" required><br>
-
-        <label asp-for="ClientId">Client ID:</label>
-        <input asp-for="ClientId" class="form-control" required><br>
-
-        <label asp-for="EmployeeId">Employee ID:</label>
-        <input asp-for="EmployeeId" class="form-control" required><br> *@
-
-        <input type="submit" value="Submit">
     </form>
-
+    <p>
+        <a asp-action="Edit" asp-controller="Employee" asp-route-id="@Model.Id">Edit</a> |
+        <a asp-action="Details" asp-controller="AutoBase" asp-route-Id="@Model.AutoBaseId">Back to List</a>
+    </p>
 </body>
 </html>

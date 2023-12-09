@@ -22,18 +22,21 @@ namespace Курсовий_проект_Барташ.Controllers
         {
             return View(_fuelService.GetFuelConsumption(Id));
         }
-        public ActionResult Edit()
+        public ActionResult Edit(Guid Id)
         {
-            return View();
+            return View(_fuelService.GetFuelConsumption(Id));
         }
         [HttpPost]
         public ActionResult Edit(FuelConsumption model)
         {
-            return View();
+            _fuelService.UpdateFuelConsumptionRecord(model);
+            return View("Details",model);
         }
         public ActionResult Delete(Guid Id)
         {
-            return View();
+            var model = _fuelService.GetFuelConsumption(Id);
+            _fuelService.DeleteFuelConsumtionRecord(Id);
+            return RedirectToAction("Details", "AutoBase", new { Id  =  model.AutoBaseId });
         }
         public ActionResult Create(Guid autoBaseId)
         {
@@ -43,7 +46,7 @@ namespace Курсовий_проект_Барташ.Controllers
         public ActionResult Create(FuelConsumption model)
         {
             _fuelService.CreateFuelConsumptionRecord(model);
-            return View();
+            return RedirectToAction("Details", "AutoBase", new { Id = model.AutoBaseId });
         }
     }
 }

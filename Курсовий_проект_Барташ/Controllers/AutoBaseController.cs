@@ -24,13 +24,16 @@ namespace Курсовий_проект_Барташ.Controllers
             
             return View(_autoBaseService.GetAutoBase(Id));
         }
+        public ActionResult Edit(Guid Id)
+        {
+            return View(_autoBaseService.GetAutoBase(Id));
+        }
         [HttpPost]
         public ActionResult Edit(AutoBase model)
         {
             _autoBaseService.UpdateAutoBase(model);
-            return View(model);
+            return View("Details", _autoBaseService.GetAutoBase(model.Id));
         }
-        [HttpPost]
         public ActionResult Delete(Guid Id)
         {
             _autoBaseService.DeleteAutoBase(Id);
@@ -46,7 +49,7 @@ namespace Курсовий_проект_Барташ.Controllers
             model.CreatedDate = DateTime.Now;
             model.UpdatedDate = DateTime.Now;
             _autoBaseService.CreateAutoBase(model);
-            return View("Base", model);
+            return RedirectToAction("Index");
         }
     }
 }

@@ -25,19 +25,19 @@ namespace Курсовий_проект_Барташ.Controllers
         }
         public ActionResult Edit(Guid Id)
         {
-            var supplier = _supplierService.GetSupplier(Id);
-            return View();
+            return View(_supplierService.GetSupplier(Id));
         }
         [HttpPost]
         public ActionResult Edit(Supplier model)
         {
             _supplierService.UpdateSupplier(model);
-            return View();
+            return View("Details", model);
         }
         public ActionResult Delete(Guid Id)
         {
+            var model = _supplierService.GetSupplier(Id);
             _supplierService.DeleteSupplier(Id);
-            return View();
+            return RedirectToAction("Details", "AutoBase", new { Id = model.AutoBaseId });
         }
         public ActionResult Create(Guid autoBaseId)
         {
@@ -47,7 +47,7 @@ namespace Курсовий_проект_Барташ.Controllers
         public ActionResult Create(Supplier model)
         {
             _supplierService.CreateSupplier(model);
-            return View();
+            return RedirectToAction("Details", "AutoBase", new { Id = model.AutoBaseId });
         }
     }
 }

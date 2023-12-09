@@ -27,6 +27,10 @@
 
         <!-- Add other AutoBase properties as needed -->
 
+        <div>
+            <a asp-action="Edit" asp-controller="AutoBase" asp-route-autoBaseId="@Model.Id">Edit Auto base</a>
+        </div>
+
           <div>
         <a asp-action="Create" asp-controller="Fuel" asp-route-autoBaseId="@Model.Id">Create Fuel Consumption</a>
     </div>
@@ -45,6 +49,12 @@
                     <a href="@Url.Action("Details", "Fuel", new { id = fuelConsumption.Id })">
                         @fuelConsumption.Type - Volume: @fuelConsumption.Volume, Price: @fuelConsumption.Price
                     </a>
+                    <a href="@Url.Action("Edit", "Fuel", new { id = fuelConsumption.Id })">
+                        Edit
+                    </a>
+                    <a href="@Url.Action("Delete", "Fuel", new { id = fuelConsumption.Id })">
+                        Delete
+                    </a>
                 </li>
             }
         </ul>
@@ -57,6 +67,12 @@
                     <a href="@Url.Action("Details", "Suppliers", new { id = supplier.Id })">
                         @supplier.Name
                     </a>
+                    <a href="@Url.Action("Edit", "Suppliers", new { id = supplier.Id })">
+                        Edit
+                    </a>
+                    <a href="@Url.Action("Delete", "Suppliers", new { id = supplier.Id })">
+                        Delete
+                    </a>
                 </li>
             }
         </ul>
@@ -68,6 +84,12 @@
                 <li>
                     <a href="@Url.Action("Details", "Employee", new { id = employee.Id })">
                         @employee.Name
+                    </a>
+                    <a href="@Url.Action("Edit", "Employee", new { id = employee.Id })">
+                        Edit
+                    </a>
+                    <a href="@Url.Action("Delete", "Employee", new { id = employee.Id })">
+                        Delete
                     </a>
                 </li>
             }
