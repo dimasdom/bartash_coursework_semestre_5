@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Infrastracture.DataBase.Repositories.AutoBaseRepository" BaseTypeListCollapsed="true">
+    <Position X="2.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAIAAAAAAAAQAgAAAAAAAAAAAAAgAAAgAAAAA=</HashCode>
+      <FileName>DataBase\Repositories\AutoBaseRepository.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.19" />
+  </Class>
+  <Class Name="Infrastracture.DataBase.Repositories.EmployeeRepository" BaseTypeListCollapsed="true">
+    <Position X="4.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAIAAAAAAAAQAgAAAAAAAAAAAAAgAAAgAAAAA=</HashCode>
+      <FileName>DataBase\Repositories\EmployeeRepository.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Infrastracture.DataBase.Repositories.FuelRepository" BaseTypeListCollapsed="true">
+    <Position X="6.25" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAIAAAAAAAAQAgAAAAAAAAAAAAAgAAAgAAAAA=</HashCode>
+      <FileName>DataBase\Repositories\FuelRepository.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Infrastracture.DataBase.Repositories.SupplierRepository" BaseTypeListCollapsed="true">
+    <Position X="2.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAIAAAAAAAAQAgAAAAAAAAAAAAAgAAAgAAAAA=</HashCode>
+      <FileName>DataBase\Repositories\SupplierRepository.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Infrastracture.DataBase.Repositories.UserRepository" BaseTypeListCollapsed="true">
+    <Position X="4.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAIAAAAAAAAQAgAAAAAAAAAAAAAgAAAgAAAAA=</HashCode>
+      <FileName>DataBase\Repositories\UserRepository.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

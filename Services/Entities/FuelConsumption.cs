@@ -10,17 +10,22 @@ namespace Core.Entities
 {
     public class FuelConsumption
     {
+        // Унікальний ідентифікатор споживання пального
         public Guid Id { get; set; }
+
+        // Унікальний ідентифікатор автобази, до якої відноситься споживання пального
         public Guid AutoBaseId { get; set; }
+
+        // Тип пального (використовує перерахування FuelType)
         public FuelType Type { get; set; }
+
+        // Об'єм спожитого пального
         public float Volume { get; set; }
+
+        // Вартість спожитого пального
         public float Price { get; set; }
+
+        // Тип операції (використовує перерахування OperationType)
         public OperationType OperationType { get; set; }
-        //public Guid SupplierId { get; set; }
-        //public Guid ClientId { get; set; }
-        //public Guid EmployeeId { get; set; }
-        //public Supplier Supplier { get; set; }
-        //public Client Client { get; set; }
-        //public Employee Employee { get; set; }
     }
 }

@@ -8,7 +8,11 @@ using System.Threading.Tasks;
 
 namespace Infrastracture.Core.Interfaces.IRepositories
 {
-    public interface IUserRepository :IRepository<UserModel>
+    public interface IUserRepository : IRepository<UserModel>
     {
+        // Методи, що успадковуються від IRepository<UserModel>
+        // Додаткові методи або функціональність, якщо потрібно
+        // ...
     }
 }
+

@@ -1,4 +1,4 @@
-﻿using Core.DTO;
+﻿
 using Core.Entities;
 using Core.Interfaces;
 using Microsoft.AspNetCore.Mvc;
@@ -31,6 +31,7 @@ namespace Курсовий_проект_Барташ.Controllers
         [HttpPost]
         public ActionResult Edit(AutoBase model)
         {
+            model.UpdatedDate = DateTime.UtcNow;
             _autoBaseService.UpdateAutoBase(model);
             return View("Details", _autoBaseService.GetAutoBase(model.Id));
         }
@@ -46,8 +47,8 @@ namespace Курсовий_проект_Барташ.Controllers
         [HttpPost]
         public ActionResult Create(AutoBase model)
         {
-            model.CreatedDate = DateTime.Now;
-            model.UpdatedDate = DateTime.Now;
+            model.CreatedDate = DateTime.UtcNow;
+            model.UpdatedDate = DateTime.UtcNow;
             _autoBaseService.CreateAutoBase(model);
             return RedirectToAction("Index");
         }

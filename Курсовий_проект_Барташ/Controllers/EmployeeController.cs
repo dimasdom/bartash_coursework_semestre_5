@@ -1,4 +1,4 @@
-﻿using Core.DTO;
+﻿
 using Core.Entities;
 using Core.Interfaces;
 using Core.Services;
@@ -45,6 +45,7 @@ namespace Курсовий_проект_Барташ.Controllers
         [HttpPost]
         public ActionResult Create(Employee model)
         {
+            model.CreatedDate = DateTime.UtcNow;
             _employeeService.CreateEmployee(model);
             return RedirectToAction("Details", "AutoBase", new { Id = model.AutoBaseId });
         }

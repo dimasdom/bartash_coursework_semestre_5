@@ -1,4 +1,4 @@
-﻿using Core.DTO;
+﻿
 using Core.Entities;
 using Core.Interfaces;
 using Infrastracture.Core.Interfaces.IRepositories;
@@ -14,34 +14,50 @@ namespace Core.Services
     {
         private readonly ISupplierRepository repository;
 
+        // Конструктор класу, приймає ISupplierRepository через Dependency Injection
         public SupplierService(ISupplierRepository repository)
         {
             this.repository = repository;
         }
 
-        public void CreateSupplier(Supplier Supplier)
+        // Метод для створення нового постачальника
+        public void CreateSupplier(Supplier supplier)
         {
-            repository.AddValue(Supplier);
+            repository.AddValue(supplier);
         }
 
+        // Метод для видалення постачальника за ідентифікатором
         public void DeleteSupplier(Guid Id)
         {
-            repository.RemoveValue(repository.GetValueById(Id));
+            // Отримання існуючого постачальника за ідентифікатором
+            Supplier existingSupplier = repository.GetValueById(Id);
+
+            // Перевірка, чи знайдений постачальник за ідентифікатором
+            if (existingSupplier != null)
+            {
+                // Видалення постачальника
+                repository.RemoveValue(existingSupplier);
+            }
+            // Додаткова логіка або обробка, якщо постачальник з ідентифікатором Id не знайдений
         }
 
+        // Метод для отримання списку всіх постачальників
         public IEnumerable<Supplier> GetAll()
         {
             return repository.GetAll();
         }
 
+        // Метод для отримання постачальника за ідентифікатором
         public Supplier GetSupplier(Guid Id)
         {
             return repository.GetValueById(Id);
         }
 
-        public void UpdateSupplier(Supplier Supplier)
+        // Метод для оновлення інформації про постачальника
+        public void UpdateSupplier(Supplier supplier)
         {
-            repository.Update(Supplier);
+            repository.Update(supplier);
         }
     }
+
 }

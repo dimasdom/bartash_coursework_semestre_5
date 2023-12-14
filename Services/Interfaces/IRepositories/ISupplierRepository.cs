@@ -8,7 +8,11 @@ using System.Threading.Tasks;
 
 namespace Infrastracture.Core.Interfaces.IRepositories
 {
-    public interface ISupplierRepository :IRepository<Supplier>
+    public interface ISupplierRepository : IRepository<Supplier>
     {
+        // Методи, що успадковуються від IRepository<Supplier>
+        // Додаткові методи або функціональність, якщо потрібно
+        // ...
     }
 }
+

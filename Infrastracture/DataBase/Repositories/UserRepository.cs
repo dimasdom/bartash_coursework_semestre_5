@@ -47,7 +47,7 @@ namespace Infrastracture.DataBase.Repositories
 
         public void Update(UserModel value)
         {
-            throw new NotImplementedException();
+            dbContext.Users.Remove(value);
         }
     }
 }

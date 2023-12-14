@@ -10,5 +10,9 @@ namespace Infrastracture.Core.Interfaces.IRepositories
 {
     public interface IAutoBaseRepository : IRepository<AutoBase>
     {
+        // Методи, що успадковуються від IRepository<AutoBase>
+        // Додаткові методи або функціональність, якщо потрібно
+        // ...
     }
+
 }

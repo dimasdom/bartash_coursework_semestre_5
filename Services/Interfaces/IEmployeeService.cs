@@ -1,4 +1,4 @@
-﻿using Core.DTO;
+﻿
 using Core.Entities;
 using System;
 using System.Collections.Generic;
@@ -10,10 +10,20 @@ namespace Core.Interfaces
 {
     public interface IEmployeeService
     {
+        // Отримання працівника за ідентифікатором
         public Employee GetEmployee(Guid Id);
+
+        // Видалення працівника за ідентифікатором
         public void DeleteEmployee(Guid Id);
-        public void UpdateEmployee(Employee Employee);
+
+        // Оновлення інформації про працівника
+        public void UpdateEmployee(Employee employee);
+
+        // Отримання всіх працівників
         public IEnumerable<Employee> GetAll();
-        public void CreateEmployee(Employee Employee);
+
+        // Створення нового працівника
+        public void CreateEmployee(Employee employee);
     }
+
 }

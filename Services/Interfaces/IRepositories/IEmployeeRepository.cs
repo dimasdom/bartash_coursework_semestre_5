@@ -8,7 +8,12 @@ using System.Threading.Tasks;
 
 namespace Infrastracture.Core.Interfaces.IRepositories
 {
-    public interface IEmployeeRepository: IRepository<Employee>
+    public interface IEmployeeRepository : IRepository<Employee>
     {
+        // Інтерфейс IEmployeeRepository успадковує всі методи та контракти визначені в IRepository<Employee>
+
+        // Додаткові методи або функціональність, якщо потрібно
+        // ...
     }
+
 }

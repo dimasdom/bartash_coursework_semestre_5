@@ -1,4 +1,4 @@
-﻿using Core.DTO;
+﻿
 using Core.Entities;
 using Core.Interfaces;
 using Microsoft.AspNetCore.Mvc;
@@ -46,6 +46,7 @@ namespace Курсовий_проект_Барташ.Controllers
         [HttpPost]
         public ActionResult Create(Supplier model)
         {
+            model.CreationDate = DateTime.UtcNow;
             _supplierService.CreateSupplier(model);
             return RedirectToAction("Details", "AutoBase", new { Id = model.AutoBaseId });
         }

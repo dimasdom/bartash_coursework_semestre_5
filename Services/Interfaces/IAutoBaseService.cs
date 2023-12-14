@@ -1,4 +1,4 @@
-﻿using Core.DTO;
+﻿
 using Core.Entities;
 using System;
 using System.Collections.Generic;
@@ -10,10 +10,20 @@ namespace Core.Interfaces
 {
     public interface IAutoBaseService
     {
+        // Отримання автобази за ідентифікатором
         public AutoBase GetAutoBase(Guid Id);
+
+        // Видалення автобази за ідентифікатором
         public void DeleteAutoBase(Guid Id);
-        public void UpdateAutoBase(AutoBase Supplier);
+
+        // Оновлення інформації про автобазу
+        public void UpdateAutoBase(AutoBase autoBase);
+
+        // Отримання всіх автобаз
         public IEnumerable<AutoBase> GetAll();
-        public void CreateAutoBase(AutoBase Supplier);
+
+        // Створення нової автобази
+        public void CreateAutoBase(AutoBase autoBase);
     }
+
 }
